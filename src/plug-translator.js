@@ -15,15 +15,8 @@ if (typeof window.pt != "undefined") window.pt.kill();
 				element.data({raw_html: raw_html});
 
 				return window.pt.utils.translate(encodeURIComponent(stripped_string))
-					.then(response => {
-						response = response.filter(e => e && e.length);
-
-						let translated_text = response[0].map(e => e[0]).join("");
-
-						let html = translated_text.replace(/\n/g, "<br>");
-
-						element.find(".text").html(translated_text);
-					}).catch(err => window.pt.utils.failedTranslation(this));
+					.then(translated_text => element.find(".text").html(translated_text.replace(/\n/g, "<br>")))
+					.catch(err => window.pt.utils.failedTranslation(this));
 			}
 		},
 		utils: {
@@ -63,7 +56,24 @@ if (typeof window.pt != "undefined") window.pt.kill();
 				return new Promise ((resolve, reject) => {
 					$.get(`https://translate.googleapis.com/translate_a/single?client=gtx&dt=t&sl=auto&tl=en&q=${string}`)
 						.done(response => {
-							return resolve(response);
+							// used to receive it in string form.. just in case..
+							if (!Array.isArray(response))
+								if (typeof response === "string") {
+									try {
+										response = JSON.stringify(response);
+									} catch (err) {
+										return reject(err);
+									}
+								} else return reject();
+
+							// remove null's and any empty arrays, they're useless :)
+							response = response.filter(e => e && e.length);
+
+							if (!response.length || (response.length && !response[0].length)) return reject();
+
+							// seems for each new line, it creates an array with the first element being the translated text,
+							// and the second being the original string, here we map it down to only the translated text and join it all together
+							return resolve(response[0].map(e => e[0]).join(""));
 						}).fail(reject);
 				});
 			},

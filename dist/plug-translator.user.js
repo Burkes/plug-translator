@@ -21,7 +21,7 @@
 // @exclude         https://plug.dj/android-*
 // @exclude         https://plug.dj/@/*
 // @exclude         https://plug.dj/_/*
-// @version         1.0.0
+// @version         1.1.0
 // @downloadURL     https://rawgit.com/Burkes/plug-translator/master/dist/plug-translator.user.js
 // @updateURL       https://rawgit.com/Burkes/plug-translator/master/dist/plug-translator.user.js
 // ==/UserScript==

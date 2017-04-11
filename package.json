@@ -1,6 +1,6 @@
 {
   "name": "plug-translator",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "dist_url": "https://rawgit.com/Burkes/plug-translator/master/dist/",
   "description": "translation script for plug.dj chat messages",
   "scripts": {
