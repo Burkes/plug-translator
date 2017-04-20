@@ -9,7 +9,7 @@
 
 	function run () {
 		var script = document.createElement("script");
-			script.id = "emoji-picker";
+			script.id = "<%= name %>";
 			script.src = "<%= dist_url %><%= name %>.min.js";
 
 		script.onload = function() {

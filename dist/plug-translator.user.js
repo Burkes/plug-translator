@@ -21,7 +21,7 @@
 // @exclude         https://plug.dj/android-*
 // @exclude         https://plug.dj/@/*
 // @exclude         https://plug.dj/_/*
-// @version         1.1.0
+// @version         1.1.1
 // @downloadURL     https://rawgit.com/Burkes/plug-translator/master/dist/plug-translator.user.js
 // @updateURL       https://rawgit.com/Burkes/plug-translator/master/dist/plug-translator.user.js
 // ==/UserScript==
@@ -36,7 +36,7 @@
 
 	function run () {
 		var script = document.createElement("script");
-			script.id = "emoji-picker";
+			script.id = "plug-translator";
 			script.src = "https://rawgit.com/Burkes/plug-translator/master/dist/plug-translator.min.js";
 
 		script.onload = function() {
