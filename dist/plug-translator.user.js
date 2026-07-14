@@ -22,10 +22,9 @@
 // @exclude         https://plug.dj/@/*
 // @exclude         https://plug.dj/_/*
 // @version         1.1.1
-// @downloadURL     https://rawgit.com/Burkes/plug-translator/master/dist/plug-translator.user.js
-// @updateURL       https://rawgit.com/Burkes/plug-translator/master/dist/plug-translator.user.js
+// @downloadURL     https://cdn.jsdelivr.net/gh/Burkes/plug-translator@1.1.1/dist/plug-translator.user.js
+// @updateURL       https://cdn.jsdelivr.net/gh/Burkes/plug-translator@1.1.1/dist/plug-translator.user.js
 // ==/UserScript==
-
 (function() {
 	function check() {
 		if (typeof API !== "undefined" && API.enabled)
@@ -37,7 +36,7 @@
 	function run () {
 		var script = document.createElement("script");
 			script.id = "plug-translator";
-			script.src = "https://rawgit.com/Burkes/plug-translator/master/dist/plug-translator.min.js";
+			script.src = "https://cdn.jsdelivr.net/gh/Burkes/plug-translator@1.1.1/dist/plug-translator.min.js";
 
 		script.onload = function() {
 		    this.parentNode.removeChild(this);
