@@ -11,6 +11,6 @@
   "license": "GPL-3.0",
   "homepage": "https://burkes.github.io/plug-translator/",
   "devDependencies": {
-    "esbuild": "0.28.1"
+    "esbuild": "0.28.2"
   }
 }
